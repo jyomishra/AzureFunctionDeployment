@@ -92,30 +92,6 @@
             "type": "string",
             "defaultValue": "$default"
         },
-        "inputHubNameMetrics": {
-            "type": "string",
-            "defaultValue": "insights-metrics-pt1m"
-        },
-        "consumerGroupNameMetrics": {
-            "type": "string",
-            "defaultValue": "$default"
-        },
-        "inputHubNameWAD": {
-            "type": "string",
-            "defaultValue": "insights-telemetry-wad"
-        },
-        "consumerGroupNameWAD": {
-            "type": "string",
-            "defaultValue": "$default"
-        },
-        "inputHubNameLAD": {
-            "type": "string",
-            "defaultValue": "insights-telemetry-lad"
-        },
-        "consumerGroupNameLAD": {
-            "type": "string",
-            "defaultValue": "$default"
-        },
         "inputHubNameFaults": {
             "type": "string",
             "defaultValue": "transmission-faults"
@@ -136,17 +112,6 @@
             "metadata": {
                 "description": "values are hec, proxy, eventhub"
             }
-        },
-        "outputHubConnection": {
-            "type": "string",
-            "defaultValue" :"Endpoint=sb://YOURNAMESPACE.servicebus.windows.net/;SharedAccessKeyName=YOURPOLICYNAME;SharedAccessKey=YOURPOLICYKEY",
-            "metadata": {
-                "description": "Only used with outputBinding = eventhub, but must be a valid connection string."
-            }
-        },
-        "output-hub-name-proxy": {
-            "type": "string",
-            "defaultValue": "collector-to-proxy"
         }
     },
     "variables": {
@@ -279,30 +244,6 @@
                             "value": "[parameters('consumerGroupNameDiagnosticLogs')]"
                         },
                         {
-                            "name": "input-hub-name-metrics",
-                            "value": "[parameters('inputHubNameMetrics')]"
-                        },
-                        {
-                            "name": "consumer-group-metrics",
-                            "value": "[parameters('consumerGroupNameMetrics')]"
-                        },
-                        {
-                            "name": "input-hub-name-wad",
-                            "value": "[parameters('inputHubNameWAD')]"
-                        },
-                        {
-                            "name": "consumer-group-wad",
-                            "value": "[parameters('consumerGroupNameWAD')]"
-                        },
-                        {
-                            "name": "input-hub-name-lad",
-                            "value": "[parameters('inputHubNameLAD')]"
-                        },
-                        {
-                            "name": "consumer-group-lad",
-                            "value": "[parameters('consumerGroupNameLAD')]"
-                        },
-                        {
                             "name": "input-hub-name-faults",
                             "value": "[parameters('inputHubNameFaults')]"
                         },
@@ -321,14 +262,6 @@
                         {
                             "name": "splunkCertThumbprint",
                             "value": "[parameters('splunkCertThumbprint')]"
-                        },
-                        {
-                            "name": "outputHubConnection",
-                            "value": "[parameters('outputHubConnection')]"
-                        },
-                        {
-                            "name": "output-hub-name-proxy",
-                            "value": "[parameters('output-hub-name-proxy')]"
                         }
                     ]
                 }
